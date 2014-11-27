@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+<h:head>
+	<meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1"/>
+	<title>Cadastro de Produto</title>
+</h:head>
+<h:body>
+	<h1>Cadastro de Produto</h1>
+	<h:form id="cadastro">
+		<h:messages/>
+		<h:inputHidden value="#{produtoBean.produto.codigo}"/>
+		<h:inputHidden value="#{produtoBean.destinoSalvar}"/>
+		
+		<h:panelGrid columns="2">
+		
+			<h:outputLabel value="Descrição:" for="descricao"/>
+			<h:inputText id="descricao" label="Descrição" value="#{produtoBean.produto.descricao}" size="30" 
+			maxlength="30" required="true" requiredMessage="Acrescente uma descrição para o item.?">
+			</h:inputText>
+			
+			<h:outputLabel value="Fornecedor:" for="fornecedor"/>
+			<h:inputText id="fornecedor" label="Fornecedor" value="#{produtoBean.produto.fornecedor}" size="10" 
+			maxlength="30" required="true">
+			</h:inputText>
+			
+			<h:outputLabel value="Peso" for="peso"/>
+			<h:inputText id="peso" label="Peso" value="#{produtoBean.produto.peso}" size="10" 
+			maxlength="30" required="true">
+			</h:inputText>
+			
+			<h:outputLabel value="Custo" for="custo"/>
+			<h:inputText id="custo" label="Custo" value="#{produtoBean.produto.custo}" size="10" 
+			maxlength="30" required="true">
+			</h:inputText>
+				
+		</h:panelGrid>
+		<br/>
+		<h:commandButton action="#{produtoBean.salvar}" value="Salvar"/>
+	
+	</h:form>
+
+</h:body>
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+	
+<h:head>
+	<title>Listagem</title>
+</h:head>
+<h:body>
+	<h1>Listagem</h1>
+	<hr/>
+	
+	<h:form>
+		<h:dataTable value="#{produtoBean.produtos}" var="produto"  rules="rows" cellpadding="5">
+		
+			<f:facet name="caption">
+				Lista de Produtos
+			</f:facet>
+			
+				<h:column>
+					<f:facet name="header">Código</f:facet>
+					<h:outputText value="#{produto.codigo}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Descrição</f:facet>
+					<h:outputText value="#{produto.descricao}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Fornecedor</f:facet>
+					<h:outputText value="#{produto.fornecedor}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Peso</f:facet>
+					<h:outputText value="#{produto.peso}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Custo</f:facet>
+					<h:outputText value="#{produto.custo}"/>
+				</h:column>
+				
+				<h:column>
+					<h:commandLink action="#{produtoBean.editar}">
+						<h:graphicImage library="imagens" name="editar16.png" style="border:0"/>
+						<f:setPropertyActionListener target="#{produtoBean.produto}" value="#{produto}"/>
+						<f:setPropertyActionListener target="#{produtoBean.destinoSalvar}" value="/listagem"/>
+					</h:commandLink>
+				</h:column>
+				<h:column>
+					<h:commandLink action="#{produtoBean.excluir}" onclick="if (!confirm('Confirma a exclusão do produto #{produto.descricao}?')) return false;">
+						<h:graphicImage library="imagens" name="excluir16.png" style="border:0"/>
+						<f:setPropertyActionListener target="#{produtoBean.produto}" value="#{produto}"/>
+					</h:commandLink>
+				</h:column>
+		
+		</h:dataTable>
+	</h:form>
+	<br/>
+	<h:form>		
+		<h:commandButton action="#{produtoBean.novo}" value="Cadastrar novo produto"/>
+		<br/><br/>
+		<h:commandButton action="#{produtoBean.relatorio}" value="Gerar relatório"/>
+		<br/><br/>
+		<a href="listagem2.jsf">Primefaces+Jquery</a>
+	</h:form>
+</h:body>
+</html>

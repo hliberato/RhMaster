@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rhmaster" language="groovy" pageWidth="600" pageHeight="595" orientation="Landscape" columnWidth="560" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eddff270-ec29-438b-ac91-42ed014b4cba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="descricao" class="java.lang.String"/>
+	<field name="codigo" class="java.lang.Integer"/>
+	<field name="fornecedor" class="java.lang.String"/>
+	<field name="peso" class="java.lang.Integer"/>
+	<field name="custo" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="185" y="24" width="195" height="30" uuid="20dddd84-9cd9-49cd-ab2b-0725227698bb"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Relatório de Produtos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="115" y="0" width="100" height="20" uuid="1567aeba-d270-4179-8c73-4315ec0b23f5"/>
+				<text><![CDATA[descricao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="52ac85af-2c33-4278-9bce-e8dba90878ae"/>
+				<text><![CDATA[código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="232" y="0" width="100" height="20" uuid="3bdfcd86-b1d7-4189-b2f2-01f624299803"/>
+				<text><![CDATA[fornecedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="0" width="100" height="20" uuid="39a7e006-afbb-47e5-bad7-a3f90c8c3360"/>
+				<text><![CDATA[peso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="460" y="0" width="100" height="20" uuid="672e2dac-102d-4dd4-b88d-70b06cb97de5"/>
+				<text><![CDATA[custo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="100">
+			<textField>
+				<reportElement x="115" y="0" width="100" height="20" uuid="a1e70afc-5d7e-48fe-a110-6b492a90975b"/>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="cf5ad147-76fc-4926-9a3e-acf4431c0a11"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="0" width="100" height="20" uuid="6f78e9fa-dfd8-4a4a-b282-b5e06270d0c9"/>
+				<textFieldExpression><![CDATA[$F{fornecedor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="0" width="100" height="20" uuid="215698f0-21f2-4077-9b8d-c6f175d23203"/>
+				<textFieldExpression><![CDATA[$F{peso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="0" width="100" height="20" uuid="36142cb8-2f6c-4a6c-a7a5-980cc63bb178"/>
+				<textFieldExpression><![CDATA[$F{custo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
